@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Play&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ruslan+Display&display=swap');
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  background: linear-gradient(#F4F8FF, #fff);
+}
+.container {
+  width: 90vw;
+  margin: auto;
+  padding: 5% 0;
+}
+.logo {
+  width: 102px;
+}
+header, .menu-block {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-block {
+  width: 35vw;
+}
+.logo-text {
+  margin: 0;
+  font-size: 44px;
+}
+.stars {
+  width: 129px;
+}
+.text {
+  margin: 0 auto;
+  width: 55vw;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+.background-block {
+  border-radius: 30px;
+  background: linear-gradient(#7B51F7, #BAB0FF);
+}
+.background-cubes {
+  border-radius: 30px;
+  background-image: url('../img/cube.svg');
+  background-position: -30px -40px;
+}
+.background-gradient {
+  border-radius: 30px;
+  background: linear-gradient(rgb(123, 81, 247, 0.5), rgb(186, 176, 255, 0));
+  backdrop-filter: blur(3px);
+}
+form {
+  margin: auto;
+  width: 60vw;
+  padding: 100px 0;
+}
+.radio-block {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  width: 330px;
+  padding: 5px;
+  background-color: #F4F8FF;
+  border-radius: 16px;
+}
+.radio-block input[type="radio"] {
+  display: none;
+}
+.radio-block label{
+  width: 46%;
+  background-color: #fff;
+  color: #7B51F7;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.radio-block label:hover {
+  background-color: #9674F9;
+  color: #fff;
+}
+.radio-block input[type="radio"]:checked + label {
+  background-color: #333333;
+  color: #fff;
+  cursor: default;
+  animation-duration: 0.3s;
+}
+.input-submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #F4F8FF;
+  border-radius: 16px;
+  margin: 30px 0;
+  min-height: 44.8px;
+}
+.input {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  line-height: inherit;
+  border: none;
+  border-radius: 10px;
+  background-color: #F4F8FF;
+  font-size: 20px;
+  padding: 5px;
+  color: #919191;
+  height: 30px;
+}
+input::placeholder {
+  color: #919191;
+}
+.hidden {
+  display: none;
+}
+.search {
+  border:#BAB0FF 3px solid;
+  width: 40%;
+}
+.link {
+  width: 100%;
+}
+.area, .floor {
+  border: #BAB0FF 3px solid;
+  width: 13%;
+}
+.room {
+  border: #BAB0FF 3px solid;
+  appearance: none;
+  width: 13%;
+  height: max-content;
+  cursor: pointer;
+}
+.submit {
+  border: none;
+  height: 40px;
+  padding: 10px;
+  background-color: #7B51F7;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.s-desktop {
+  width: 122px;
+}
+.s-mobile {
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .menu-block {
+    width: 50vw;
+  }
+  .radio-block {
+    width: 25vw;
+  }
+  input.room, input.area, input.floor {
+    font-size: 18px;
+  }
+}
+@media (max-width: 900px) {
+  .logo {
+    width: 90px;
+  }
+  .logo-text {
+    font-size: 40px;
+  }
+  .stars {
+    width: 100px;
+  }
+  .text {
+    font-size: 18px;
+    width: 60vw;
+  }
+  .radio-block {
+    width: 35vw;
+  }
+  .input-submit {
+    flex-wrap: wrap;
+  }
+  .search, .area {
+    width: 45%;
+    margin-bottom: 10px;
+  }
+  .room, .floor {
+    width: 32%;
+  }
+  .link {
+    width: 60%;
+  }
+}
+@media (max-width: 720px) {
+  .stars {
+    display: none;
+  }
+  .radio-block {
+    width: 100%;
+  }
+  .room,.floor {
+    width: 30%;
+  }
+}
+@media (max-width: 600px) {
+  .room, .input::placeholder {
+    font-size: 16px;
+  }
+  .search, .area, .room, .floor {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .input-submit {
+    margin-bottom: 10px;
+  }
+  .link {
+    width: 100%;
+  }
+  .s-desktop {
+    display: none;
+  }
+  .s-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (max-width: 500px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-block {
+    width: 100%;
+    justify-content: center;
+  }
+  .logo {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+  .text {
+    font-size: 15px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 80vw;
+  }
+  form {
+    width: 80vw;
+    padding: 70px 0;
+  }
+}

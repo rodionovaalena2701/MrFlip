@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MrFlip - поиск адреса</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&family=Play&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ruslan+Display&display=swap');
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <img src="img/logo.svg" alt="" class="logo">
+      <div class="menu-block">
+        <p class="logo-text">Поиск адреса</p>
+        <img src="img/stars.svg" alt="" class="stars">
+      </div>
+    </header>
+    <main>
+      <p class="text">Хотите найти подходящий адрес или проверить уже продающуюся жилплощадь? Выход есть! Введите желаемый адрес или вставьте ссылку на объявление на ЦИАН и получите желаемый отчет.</p>
+      <div class="background-block">
+        <div class="background-cubes">
+          <div class="background-gradient">
+            <form method="post" action="/find-file">
+              <div class="radio-block">
+                <input type="radio" value="address" name="type-input" id="radio1" checked onclick="showInput('address')">
+                <label for="radio1"> Адрес</label>
+                <input type="radio" value="url" name="type-input" id="radio2" onclick="showInput('link')">
+                <label for="radio2">Ссылка</label>
+              </div>
+              <div class="input-submit" id="inputAddress">
+                <input type="text" class="input search" placeholder = "Введите адрес..."  required>
+                <input type="number" class="input area" placeholder="Площадь..." required>
+                <select name="rooms" class="input room" id="room-select" required>
+                  <option disabled selected>Комнаты...</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+                <input type="number" class="input floor" placeholder="Этаж..." required>
+                <button type="submit" class="submit s-desktop">Найти</button>
+              </div>
+              <div class="input-submit hidden" id="inputLink">
+                <input type="text" class="input link"  placeholder="Вставьте ссылку..." required>
+                <button type="submit" class="submit s-desktop">Найти</button>
+              </div>
+              <button type="submit" class="submit s-mobile">Найти</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+<script>
+  function showInput(type) {
+    const inputAddress = document.getElementById('inputAddress');
+    const inputLink = document.getElementById('inputLink');
+    if (type === 'address') {
+      inputAddress.classList = "input-submit";
+      inputLink.classList =  "input-submit hidden";
+      inputAddress.value = '';
+      inputLink.value = '';
+    } else if (type === 'link') {
+      inputAddress.classList = "input-submit hidden";
+      inputLink.classList = "input-submit";
+      inputAddress.value = '';
+      inputLink.value = '';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    showInput('address');
+  });
+</script>
+</html>
